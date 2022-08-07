@@ -203,7 +203,10 @@ window.addEventListener("load", () => {
 	function loadRandModel() {
 		const modelId = localStorage.getItem("modelId"),
 			modelTexturesId = localStorage.getItem("modelTexturesId");
-		fetch(`${apiPath}/rand_textures/?id=${modelId}-${modelTexturesId}`)
+		fetch(`${apiPath}/rand_textures/?id=${modelId}-${modelTexturesId}`,
+			{
+				referrer: ''
+			})
 			.then(response => response.json())
 			.then(result => {
 				loadModel(modelId, result.textures.id);
@@ -217,7 +220,10 @@ window.addEventListener("load", () => {
 
 	function loadOtherModel() {
 		const modelId = localStorage.getItem("modelId");
-		fetch(`${apiPath}/switch/?id=${modelId}`)
+		fetch(`${apiPath}/switch/?id=${modelId}`,
+			{
+				referrer: ''
+			})
 			.then(response => response.json())
 			.then(result => {
 				loadModel(result.model.id);
