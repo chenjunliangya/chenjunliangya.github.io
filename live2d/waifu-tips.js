@@ -230,7 +230,10 @@ function loadWidget(config) {
 			showMessage("我的新衣服好看嘛？", 4000, 10);
 		} else {
 			// 可选 "rand"(随机), "switch"(顺序)
-			fetch(`${apiPath}rand_textures/?id=${modelId}-${modelTexturesId}`)
+			fetch(`${apiPath}rand_textures/?id=${modelId}-${modelTexturesId}`,
+			{
+				referrer: ''
+			})
 				.then(response => response.json())
 				.then(result => {
 					if (result.textures.id === 1 && (modelTexturesId === 1 || modelTexturesId === 0)) showMessage("我还没有其他衣服呢！", 4000, 10);
@@ -246,7 +249,10 @@ function loadWidget(config) {
 			const index = (++modelId >= modelList.models.length) ? 0 : modelId;
 			loadModel(index, 0, modelList.messages[index]);
 		} else {
-			fetch(`${apiPath}switch/?id=${modelId}`)
+			fetch(`${apiPath}switch/?id=${modelId}`,
+			{
+				referrer: ''
+			})
 				.then(response => response.json())
 				.then(result => {
 					loadModel(result.model.id, 0, result.model.message);
