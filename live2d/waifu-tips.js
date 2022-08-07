@@ -1,4 +1,4 @@
-/*
+/* /*
  * Live2D Widget
  * https://github.com/stevenjoezhang/live2d-widget
  */
@@ -77,7 +77,7 @@ function loadWidget(config) {
 			Live2D.captureFrame = true;
 		});
 		document.querySelector("#waifu-tool .fa-info-circle").addEventListener("click", () => {
-			open("https://github.com/liutongxu/liutongxu.github.io");
+			open("https://github.com/chenjunliangya/chenjunliangya.github.io");
 		});
 		document.querySelector("#waifu-tool .fa-times").addEventListener("click", () => {
 			localStorage.setItem("waifu-display", Date.now());
@@ -288,3 +288,4 @@ function initWidget(config, apiPath) {
 		loadWidget(config);
 	}
 }
+ */
